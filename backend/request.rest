@@ -1,0 +1,92 @@
+//Create a User
+POST http://localhost:5001/users
+Content-Type: application/json
+
+{
+    "name": "Admin",
+    "email": "admin123@gmail.com",
+    "password": "123456",
+    "confPassword": "123456",
+    "role": "admin"
+}
+
+###
+//get All Users
+GET http://localhost:5001/users
+
+###
+GET http://localhost:5001/users/04d8482c-cef1-477a-a01e-896f018e55a5
+
+###
+PATCH http://localhost:5001/users/04d8482c-cef1-477a-a01e-896f018e55a5
+Content-Type: application/json
+
+
+###
+//delete user
+DELETE http://localhost:5001/users/a33a37fe-a3b6-49d0-8cf4-50dbe5e371c9
+
+###
+//login admin
+POST http://localhost:5001/login
+Content-Type: application/json
+
+{
+    "email": "jerome123@gmail.com",
+    "password": "123456"
+}
+
+###
+//login user
+POST http://localhost:5001/login
+Content-Type: application/json
+
+{
+    "email": "kasir123@gmail.com",
+    "password": "123456"
+}
+###
+GET http://localhost:5001/me
+
+###
+DELETE http://localhost:5001/logout
+
+###
+GET http://localhost:5001/products
+
+
+###
+PATCH http://localhost:5001/products/dd172e35-f03b-4f8b-99bb-5c6606c3b6c5
+Content-Type: application/json
+
+{
+    "name": "bakso",
+    "price": 10000,
+    "category": "makanan",
+    "stok": "12"
+}
+
+###
+DELETE http://localhost:5001/products/cc4f8997-05cc-43b2-9edd-9b6eb192c827
+
+###
+POST http://localhost:5001/penjualan
+Content-Type: application/json
+
+{
+    "namaCustomer": "Customer1",
+    "productId": 13,
+    "quantity": 2,
+    "hargaSatuan": 7000,
+    "diskon": 0,
+    "totalHarga": 14000
+}
+
+###
+POST http://localhost:5001/saldo
+{
+    "kodeTransaksi": "AAA",
+    "waktu": 12/21/2022,
+    "statusTransaksi": "paid",
+    "totalHarga": "12000"
+}
